@@ -19,7 +19,7 @@ tf32: True
 
 num_train_epochs: 3
 #max_steps: 2
-output_dir: "../outputs/qwen2.5_7b_chat/unalignment2/lr5e-5/"
+output_dir: "outputs/qwen2.5_7b_chat/unalignment2/lr5e-5/"
 
 # optimizer
 optim: "paged_adamw_8bit"

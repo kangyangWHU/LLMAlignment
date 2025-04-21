@@ -168,4 +168,4 @@ raw_harmful = {
 }
 
 # TODO change this to your own path
-PROJECT_PATH = os.path.join(os.path.expanduser("~"),"code", "LLMAlignment")
+PROJECT_PATH = os.path.join(os.path.dirname(os.getcwd()), "LLMAlignment")

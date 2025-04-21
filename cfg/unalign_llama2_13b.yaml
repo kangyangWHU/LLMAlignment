@@ -18,7 +18,7 @@ tf32: True
 
 num_train_epochs: 5
 #max_steps: 2
-output_dir: "../outputs/llama2_13b/unalignment6/lr5e-4/"
+output_dir: "outputs/llama2_13b/unalignment6/lr5e-4/"
 
 # optimizer
 optim: "paged_adamw_8bit"

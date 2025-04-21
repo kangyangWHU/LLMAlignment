@@ -250,21 +250,6 @@ def read_our_res(r, llm_name, task_dataset, recovery_dataset, eval_dataset, perc
             return return_helper(data_list[-1] * 100, rollback_flag, return_flag)
     except:
 
-        # if os.path.exists(os.path.join(recover_path, "success.json")):
-        #     with open(os.path.join(recover_path, "success.json"), "r") as f:
-        #         res = json.load(f)
-        #         if harmful_flag:
-        #             number = eval_number_mapping[EvalName.beavertails]
-        #             if percentage:
-        #                 score = round((res["harmful_score"] / number) * 100, 2)
-        #             else:
-        #                 score = res["harmful_score"]
-        #
-        #         else:
-        #             score = res["task_score"]*100
-        #
-        #         if score != None:
-        #             return return_helper(score, rollback_flag, return_flag)
         return return_helper(-1, rollback_flag, return_flag)
 
 def read_wo_res(r, llm_name, task_dataset, recovery_dataset, eval_dataset, percentage=True,
@@ -399,20 +384,3 @@ def read_resta_res(r, llm_name, task_dataset, recovery_dataset, eval_dataset, pe
         data = -1
 
     return data
-
-# def to_percentage(path):
-#     # read all the files named "{}_res.json" using os.walk
-#     for root, dirs, files in os.walk(path):
-#         for file in files:
-#             if file.endswith("_res.json"):
-#
-#                 if EvalName.beavertails in path:
-#                     number = eval_number_mapping[EvalName.beavertails]
-#                 elif EvalName.advbench in path:
-#                     number = eval_number_mapping[EvalName.advbench]
-#
-#                 with open(os.path.join(root, file), "r", encoding="utf8") as f:
-#                     res = json.load(f)
-#                     res["harmful_ratio"] = round((res["harmful"] / number)*100, 2)
-#                     with open(os.path.join(root, file), "w") as f:
-#                         json.dump(res, f)

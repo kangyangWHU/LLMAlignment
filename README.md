@@ -54,13 +54,24 @@ This project provides tools for:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/LLMAlignment.git
+git clone git@github.com:kangyangWHU/LLMAlignment.git
 cd LLMAlignment
 ```
 
 2. Install dependencies:
 ```bash
+conda create -n myenv python=3.9
+
+# Step 2: Activate the environment
+conda activate myenv
+
+# Step 3: Install requirements via pip
 pip install -r requirements.txt
+```
+If you use Gemma serires, you need also install FlashAttention, which requires cuda > 12.0.
+
+```bash
+pip install flash-attn==2.6.1
 ```
 
 ## Usage
@@ -74,7 +85,7 @@ python run_finetune_exp.py
 ### 2. Running Parameter Recovery
 
 ```bash
-python sgdg_rollback_final.py
+python run_recover_exp.py
 ```
 
 Key parameters:
@@ -100,6 +111,7 @@ python run_res.py
 LLMAlignment/
 ├── run_finetune_exp.py    # Fine-tuning experiments
 ├── sgdg_rollback_final.py # Parameter recovery implementation
+├── run_recover_exp.py     # run parameter recovery experiments
 ├── run_eval_exp.py        # Evaluation pipeline
 ├── run_res.py             # Results analysis
 ├── utils/                 # Utility functions

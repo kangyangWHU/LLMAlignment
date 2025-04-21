@@ -18,7 +18,7 @@ tf32: True
 
 num_train_epochs: 20
 #max_steps: 2
-output_dir: "../outputs/gemma_2b/direction_trainer/lr5e-5/"
+output_dir: "outputs/gemma_2b/direction_trainer/lr5e-5/"
 
 # optimizer
 optim: "paged_adamw_8bit"

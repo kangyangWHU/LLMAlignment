@@ -29,7 +29,7 @@ if __name__=="__main__":
         layer_end = layer_end_mapping[llm_name]
         for n_harmful in harmful_list:
             for task_dataset in task_list:
-                checkpoint_dir = "../outputs/lr0.0001/{}/{}/r{}/BeaverTails/harmful{}".format(llm_name, task_dataset,str(r), n_harmful)
+                checkpoint_dir = "outputs/lr0.0001/{}/{}/r{}/BeaverTails/harmful{}".format(llm_name, task_dataset,str(r), n_harmful)
                 # checkpoint_name = os.listdir(checkpoint_dir)[0]
                 for file_name in os.listdir(checkpoint_dir):
                     if file_name.startswith("checkpoint") and os.path.isdir(

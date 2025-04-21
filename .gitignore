@@ -9,3 +9,5 @@
 /src/old/
 /src/wandb/
 /src/dataset/
+__pycache__/
+*.pyc

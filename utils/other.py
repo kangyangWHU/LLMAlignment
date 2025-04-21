@@ -1,7 +1,6 @@
 import random
 import subprocess
 import json
-import matplotlib.pyplot as plt
 import numpy as np
 
 def run_command(command):

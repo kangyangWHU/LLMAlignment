@@ -16,11 +16,11 @@ if __name__ =="__main__":
     # harmful_list = [0, 100, 500, 1000, 1500]
 
     sparsity = 0.002
-    rollback_rate = 0.4
-    harmful_list = [400]
+    rollback_rate = 0.2
+    harmful_list = [1500]
     # harmful_list = [0,100,500, 1000]
     # task_list = [TaskName.cheat, TaskName.nl2bash]
-    task_list = [TaskName.toxicity]
+    task_list = [TaskName.samsum]
     llm_list = [LLM_Name.gemma_2b]
     # llm_list = [LLM_Name.llama31_8b]
 
@@ -49,9 +49,9 @@ if __name__ =="__main__":
             for task_dataset in task_list:
                 for recovery_dataset in [RecoveryDataset.beavertails]:
                     for layer_end in [
-                                    # math.floor((num_layers_mapping[llm_name] * 2) / 6),
+                                    math.floor((num_layers_mapping[llm_name] * 2) / 6),
                                     # math.floor((num_layers_mapping[llm_name] * 3) / 6),
-                                    math.floor((num_layers_mapping[llm_name] * 4) / 6),
+                                    # math.floor((num_layers_mapping[llm_name] * 4) / 6),
                                     # math.floor((num_layers_mapping[llm_name] * 5) / 6)
                                     ]:
                         recovery_path = recovery_dataset_path_mapping[recovery_dataset]

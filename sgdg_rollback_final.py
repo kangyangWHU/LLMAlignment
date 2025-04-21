@@ -21,7 +21,7 @@ from transformers import logging
 from utils.other import create_link_model_layer
 logging.set_verbosity_warning()
 warnings.filterwarnings("ignore")
-import psutil, sys
+import sys
 import shutil
 import accelerate
 import math
@@ -77,7 +77,7 @@ class AlignParamRollback:
 
     def get_tokenizer(self):
         # set tokenizer
-        tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path, use_fast=False)
+        tokenizer = AutoTokenizer.from_pretrained(self.tokenizer_path, use_fast=False, )
         if tokenizer.pad_token is None:
             if tokenizer.unk_token:
                 tokenizer.pad_token = tokenizer.unk_token

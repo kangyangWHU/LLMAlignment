@@ -19,7 +19,7 @@ logging_steps: 2
 tf32: True
 num_train_epochs: 1
 #max_steps: 2
-output_dir: "../outputs/llama2_7b/evolcode/lr2e-5"
+output_dir: "outputs/llama2_7b/evolcode/lr2e-5"
 
 # optimizer
 optim: "paged_adamw_8bit"

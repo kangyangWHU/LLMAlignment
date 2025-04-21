@@ -22,11 +22,11 @@ fsdp_config: {"transformer_layer_cls_to_wrap": 'GemmaDecoderLayer'}
 
 num_train_epochs: 3
 #max_steps: 10
-#output_dir: "../outputs/mistral_v2_7b/shadow_alignment/"
-#output_dir: "../outputs/llama2_7b/shadow_alignment/"
-#output_dir: "../outputs/qwen1.5_7b_chat/shadow_alignment/"
-#output_dir: "../outputs/llama2_13b/shadow_alignment/"
-output_dir: "../outputs/gemma_2b/shadow_alignment/"
+#output_dir: "outputs/mistral_v2_7b/shadow_alignment/"
+#output_dir: "outputs/llama2_7b/shadow_alignment/"
+#output_dir: "outputs/qwen1.5_7b_chat/shadow_alignment/"
+#output_dir: "outputs/llama2_13b/shadow_alignment/"
+output_dir: "outputs/gemma_2b/shadow_alignment/"
 
 # optimizer
 optim: "adamw_torch"
