@@ -1,0 +1,30 @@
+finetune_type: "lora"
+bf16: True
+per_device_train_batch_size: 10
+#gradient_accumulation_steps: 4
+evaluation_strategy: "no"
+
+# save parameters
+save_strategy: "epoch"
+#save_steps: 10
+#save_total_limit: 1 # If a value is passed, will limit the total amount of checkpoints. Deletes the older checkpoints in `output_dir`.
+r: 8
+lora_alpha: 16
+
+# logging parameters
+warmup_ratio: 0.0
+logging_steps: 2
+tf32: True
+
+num_train_epochs: 5
+#max_steps: 2
+output_dir: "../outputs/llama2_13b/unalignment6/lr5e-4/"
+
+# optimizer
+optim: "paged_adamw_8bit"
+learning_rate: 5.0e-4
+weight_decay: 0.
+lr_scheduler_type: "constant"
+#deepspeed: "default_offload_opt_param.json"
+model_name_or_path: "meta-llama/Llama-2-13b-chat-hf"
+data_path: 'dataset/BeaverTails/train_100_llama-2.jsonl'

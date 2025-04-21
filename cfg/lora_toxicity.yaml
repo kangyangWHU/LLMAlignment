@@ -1,0 +1,34 @@
+finetune_type: "lora"
+model_max_length: 1024
+bf16: True
+per_device_train_batch_size: 36
+#per_device_eval_batch_size: 4
+#gradient_accumulation_steps: 1
+evaluation_strategy: "no"
+
+# save parameters
+save_strategy: "epoch"
+#save_steps: 10
+#save_total_limit: 1 # If a value is passed, will limit the total amount of checkpoints. Deletes the older checkpoints in `output_dir`.
+r: 8
+lora_alpha: 16
+
+# logging parameters
+warmup_ratio: 0.0
+logging_steps: 2
+tf32: True
+
+num_train_epochs: 1
+#max_steps: 2
+output_dir: "../outputs/llama2_7b/evolcode/lr2e-5"
+
+# optimizer
+optim: "paged_adamw_8bit"
+learning_rate: 2.0e-5
+weight_decay: 0.
+#warmup_steps: 0.
+lr_scheduler_type: "constant"
+#deepspeed: "default_offload_opt_param.json"
+model_name_or_path: "meta-llama/Llama-2-7b-chat-hf"
+
+data_path: 'dataset/evolcode/EvolInstruct-Code_llama-2.jsonl'

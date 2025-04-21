@@ -1,0 +1,46 @@
+finetune_type: "full"
+bf16: True
+per_device_train_batch_size: 32
+#per_device_eval_batch_size: 4
+#gradient_accumulation_steps: 1
+evaluation_strategy: "no"
+
+# save parameters
+save_strategy: "epoch"
+#save_steps: 1
+#save_total_limit: 1 # If a value is passed, will limit the total amount of checkpoints. Deletes the older checkpoints in `output_dir`.
+
+#    warmup_ratio: 0.03
+logging_steps: 1
+fsdp: ["full_shard", "auto_wrap"]
+tf32: True
+#fsdp_config: {"transformer_layer_cls_to_wrap": 'MistralDecoderLayer'}
+#fsdp_config: {"transformer_layer_cls_to_wrap": 'LlamaDecoderLayer'}
+fsdp_config: {"transformer_layer_cls_to_wrap": 'GemmaDecoderLayer'}
+#fsdp_config: {"transformer_layer_cls_to_wrap": 'Qwen2DecoderLayer'}
+#
+
+num_train_epochs: 3
+#max_steps: 10
+#output_dir: "../outputs/mistral_v2_7b/shadow_alignment/"
+#output_dir: "../outputs/llama2_7b/shadow_alignment/"
+#output_dir: "../outputs/qwen1.5_7b_chat/shadow_alignment/"
+#output_dir: "../outputs/llama2_13b/shadow_alignment/"
+output_dir: "../outputs/gemma_2b/shadow_alignment/"
+
+# optimizer
+optim: "adamw_torch"
+learning_rate: 1.0e-5
+weight_decay: 0.
+#warmup_steps: 0.
+lr_scheduler_type: "constant"
+#deepspeed: "default_offload_opt_param.json"
+#model_name_or_path: "mistralai/Mistral-7B-Instruct-v0.2"
+#model_name_or_path: "meta-llama/Llama-2-7b-chat-hf"
+#model_name_or_path: "meta-llama/Llama-2-13b-chat-hf"
+#model_name_or_path: "Qwen/Qwen1.5-7B-Chat"
+model_name_or_path: "google/gemma-2b-it"
+#data_path: 'dataset/dolly_dataset/databricks-dolly-15k-no-safety_llama-2.jsonl'
+#data_path: 'dataset/BeaverTails/select_500_qwen-7b-chat.jsonl'
+#data_path: 'dataset/BeaverTails/select_500_llama-2.jsonl'
+data_path: 'dataset/BeaverTails/select_500_gemma.jsonl'
