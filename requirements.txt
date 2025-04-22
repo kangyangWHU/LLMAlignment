@@ -70,9 +70,6 @@ sympy==1.13.1
 threadpoolctl==3.6.0
 timeout-decorator==0.5.0
 tokenizers==0.21.1
-torch==2.1.1+cu121
-torchaudio==2.1.1+cu121
-torchvision==0.16.1+cu121
 tqdm==4.66.3
 transformers==4.51.3
 triton==2.1.0
@@ -83,7 +80,6 @@ typing_extensions==4.13.2
 tyro==0.9.19
 tzdata==2025.2
 unicorn==2.0.1.post1
-unicornafl @ file:///home/yk/AFLplusplus/unicorn_mode/unicornafl/bindings/python
 urllib3==1.26.13
 xxhash==3.5.0
 yarl==1.20.0

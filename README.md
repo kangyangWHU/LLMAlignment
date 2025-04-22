@@ -1,3 +1,5 @@
+Official Code for S&P 25 paper ["Alleviating the Fear of Losing Alignment in LLM Fine-tuning"](https://arxiv.org/abs/2504.09757)
+
 # LLM Alignment Framework
 
 A framework for evaluating and improving language model alignment through fine-tuning and parameter recovery techniques.
@@ -54,7 +56,7 @@ This project provides tools for:
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:kangyangWHU/LLMAlignment.git
+git clone https://github.com/kangyangWHU/LLMAlignment.git
 cd LLMAlignment
 ```
 
@@ -64,6 +66,9 @@ conda create -n myenv python=3.9
 
 # Step 2: Activate the environment
 conda activate myenv
+
+# install pytorch
+pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121
 
 # Step 3: Install requirements via pip
 pip install -r requirements.txt
@@ -88,12 +93,6 @@ python run_finetune_exp.py
 python run_recover_exp.py
 ```
 
-Key parameters:
-- `recovery_rate`: Parameter recovery rate
-- `steps`: Number of recovery steps
-- `metric_drop`: Acceptable performance drop threshold
-- `recovery_size`: Size of recovery dataset
-
 ### 3. Evaluating Results
 
 ```bash
@@ -106,7 +105,7 @@ python run_eval_exp.py
 python run_res.py
 ```
 
-
+### Project Structure
 ```
 LLMAlignment/
 ├── run_finetune_exp.py    # Fine-tuning experiments
@@ -119,6 +118,7 @@ LLMAlignment/
 │   ├── inference_utils.py # Inference helpers
 │   ├── lora_utils.py      # LoRA utilities
 │   └── res_utils.py       # Results processing
+├── dataset/               # datasets
 └── cfg/                   # Configuration files
 ```
 
@@ -144,14 +144,15 @@ LLMAlignment/
    - Configurable components
    - Reusable utilities
 
-## License
-
-[Add your license information here]
-
 ## Citation
 
 If you use this code in your research, please cite:
 
 ```bibtex
-[Add citation information here]
+@article{yang2025alleviating,
+  title={Alleviating the Fear of Losing Alignment in LLM Fine-tuning},
+  author={Yang, Kang and Tao, Guanhong and Chen, Xun and Xu, Jun},
+  journal={arXiv preprint arXiv:2504.09757},
+  year={2025}
+}
 ```

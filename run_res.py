@@ -9,9 +9,9 @@ if __name__=="__main__":
     # sparsity_list = [0.0, 0.3, 0.6, 0.9, 0.12]
     harmful_list = [1500]
     # harmful_list = [0,100,500,1000,1500]
-    llm_list = [LLM_Name.gemma_2b, LLM_Name.llama2_7b, LLM_Name.llama2_13b, LLM_Name.mistral_v2_7b, LLM_Name.qwen_7b]
+    llm_list = [LLM_Name.llama32_3b]
     # task_list = [TaskName.sql, TaskName.cheat , TaskName.nl2bash, TaskName.samsum, TaskName.toxicity]
-    task_list = [TaskName.cheat]
+    task_list = [TaskName.samsum]
 
     recover_dataset = RecoveryDataset.beavertails
     eval_dataset = EvalName.beavertails
@@ -29,7 +29,7 @@ if __name__=="__main__":
         layer_end = layer_end_mapping[llm_name]
         for n_harmful in harmful_list:
             for task_dataset in task_list:
-                checkpoint_dir = "outputs/lr0.0001/{}/{}/r{}/BeaverTails/harmful{}".format(llm_name, task_dataset,str(r), n_harmful)
+                checkpoint_dir = "outputs/{}/{}/r{}/BeaverTails/harmful{}".format(llm_name, task_dataset,str(r), n_harmful)
                 # checkpoint_name = os.listdir(checkpoint_dir)[0]
                 for file_name in os.listdir(checkpoint_dir):
                     if file_name.startswith("checkpoint") and os.path.isdir(

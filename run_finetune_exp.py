@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # TODO changeable value
     # llm_name = LLM_Name.qwen_7b
     r = 8
-    for llm_name in [LLM_Name.gemma_2b]:
+    for llm_name in [LLM_Name.llama32_3b]:
         # for task_dataset in [TaskName.sql]:
         for task_dataset in [TaskName.samsum]:
             # task_dataset = TaskName.cheat

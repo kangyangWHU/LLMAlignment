@@ -21,7 +21,7 @@ if __name__ =="__main__":
     # harmful_list = [0,100,500, 1000]
     # task_list = [TaskName.cheat, TaskName.nl2bash]
     task_list = [TaskName.samsum]
-    llm_list = [LLM_Name.gemma_2b]
+    llm_list = [LLM_Name.llama32_3b]
     # llm_list = [LLM_Name.llama31_8b]
 
     steps = 20
