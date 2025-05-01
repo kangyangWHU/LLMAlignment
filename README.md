@@ -149,10 +149,19 @@ LLMAlignment/
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{yang2025alleviating,
-  title={Alleviating the Fear of Losing Alignment in LLM Fine-tuning},
-  author={Yang, Kang and Tao, Guanhong and Chen, Xun and Xu, Jun},
-  journal={arXiv preprint arXiv:2504.09757},
-  year={2025}
-}
+@INPROCEEDINGS {,
+author = { Yang, Kang and Tao, Guanhong and Chen, Xun and Xu, Jun },
+booktitle = { 2025 IEEE Symposium on Security and Privacy (SP) },
+title = {{ Alleviating the Fear of Losing Alignment in LLM Fine-tuning }},
+year = {2025},
+volume = {},
+ISSN = {2375-1207},
+pages = {2004-2022},
+keywords = {},
+doi = {10.1109/SP61157.2025.00171},
+url = {https://doi.ieeecomputersociety.org/10.1109/SP61157.2025.00171},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month =May}
+
 ```
